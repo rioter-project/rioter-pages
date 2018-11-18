@@ -10,6 +10,7 @@ import {
   FooterComponent
 } from './shared';
 import { RouterModule } from '@angular/router';
+import { OntologyModule } from './ontology/ontology.module';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
 
@@ -23,6 +24,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     BrowserModule,
     SharedModule,
     HomeModule,
+    OntologyModule,
     rootRouting
   ],
   providers: [],
