@@ -11,6 +11,7 @@ import {
 } from './shared';
 import { RouterModule } from '@angular/router';
 import { OntologyModule } from './ontology/ontology.module';
+import { OntologyService } from './shared/services';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
 
@@ -27,7 +28,9 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     OntologyModule,
     rootRouting
   ],
-  providers: [],
+  providers: [
+    OntologyService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

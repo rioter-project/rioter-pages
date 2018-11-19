@@ -5,24 +5,32 @@
     </div>
 </div>
 <div>
-
-        <table align="center" class="table">
+      
+        <table align="center" class="table table-hover">
                 <thead>
                   <tr>
-                    <th scope="col">Title</th>
-                    <th scope="col">License</th>
-                    <th scope="col">Authors</th>
-                    <th scope="col">Domain</th>
-                    <th scope="col"> Description</th>
+                    <th scope="col"><b>Title</b></th>
+                    <th scope="col"><b>Serialization</b></th>
+                    <th scope="col"><b>License</b></th>
+                    <th scope="col"><b>Authors</b></th>
+                    <th scope="col"><b>Domain</b></th>
+                    <th scope="col"><b>Description</b></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Title 1</td>
-                    <td>License 1</td>
-                    <td>Authors 1</td>
-                    <td>Domain 1</td>
-                    <td>Description 1</td>
+                  <tr (click)="linkOnt(ont.id)" *ngFor="let ont of ontologies">
+                    <td><h6>{{ont.title}}</h6></td>
+                    <td>
+                      <span *ngFor="let lang of ont.serialization" class = "badge badge-pill badge-primary">{{lang}}</span>
+                    </td>
+                    <td>{{ont.license}}</td>
+                    <td>
+                      <span *ngFor="let author of ont.authors" class="badge badge-light">{{author}}</span>
+                    </td>
+                    <td>
+                      <span *ngFor="let domain of ont.domain" class="badge badge-pill badge-success">{{domain}}</span>
+                    </td>
+                    <td>{{ont.description}}</td>
                   </tr>
                   
                 </tbody>

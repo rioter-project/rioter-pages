@@ -1,4 +1,7 @@
+import { OntologyService } from './../shared/services/ontology.service';
 import { Component, OnInit } from '@angular/core';
+import { Ontology } from '../shared/models';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-ontology',
@@ -6,7 +9,22 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./ontology.component.css']
 })
 export class OntologyComponent implements OnInit {
-    constructor() { }
+    ontologies: Array<Ontology> = [];
 
-    ngOnInit(): void { }
+    constructor(
+        public ontologyService: OntologyService,
+        public router: Router
+    ) { }
+
+    ngOnInit(): void {
+        this.ontologyService.getAllOntologies()
+            .subscribe(ont => {
+                this.ontologies = ont;
+            });
+    }
+
+    linkOnt(id: number): void {
+        console.log(id);
+        window.location.href = this.ontologies[id-1].url;
+    }
 }
