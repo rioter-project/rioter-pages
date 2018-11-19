@@ -25,6 +25,6 @@ export class OntologyComponent implements OnInit {
 
     linkOnt(id: number): void {
         console.log(id);
-        window.location.href = this.ontologies[id-1].url;
+        window.location.href = this.ontologies[id - 1].url;
     }
 }
