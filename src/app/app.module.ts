@@ -1,3 +1,6 @@
+import { ContactModule } from './contact/contact.module';
+import { AppService } from './shared/services/app.service';
+import { AppsModule } from './apps/apps.module';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ModuleWithProviders } from '@angular/core';
@@ -26,10 +29,13 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     SharedModule,
     HomeModule,
     OntologyModule,
+    AppsModule,
+    ContactModule,
     rootRouting
   ],
   providers: [
-    OntologyService
+    OntologyService,
+    AppService
   ],
   bootstrap: [AppComponent]
 })

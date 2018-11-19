@@ -1,0 +1,12 @@
+h1{
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+
+div.card:hover {
+    -webkit-box-shadow: 9px 9px 30px 0px rgba(0,0,0,0.67);
+    -moz-box-shadow: 9px 9px 30px 0px rgba(0,0,0,0.67);
+    box-shadow: 9px 9px 30px 0px rgba(0,0,0,0.67);
+}

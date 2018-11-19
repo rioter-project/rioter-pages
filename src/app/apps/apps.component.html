@@ -1,0 +1,24 @@
+<div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Linked Data Technologies applied in Water Domain</h1>
+          <p class="lead"> Explore our related Water Linked Data Technology </p>
+        </div>
+</div>
+
+<!-- Card deck -->
+<div class="card-deck">
+    <!-- Card -->
+    <div *ngFor="let tool of tools" (click)="linkTool(tool.id)" class="card card-image mb-4" [style.backgroundImage]="'url('+ tool.image +')'">
+
+        <!-- Content -->
+        <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+            <div>
+                <h5 class="pink-text"><i class="fa fa-pie-chart"></i> {{tool.type}}</h5>
+                <h3 class="card-title pt-2"><strong>{{tool.title}}</strong></h3>
+                <p>{{tool.description}}</p>
+                <!--<a class="btn btn-pink"><i class="fa fa-clone left"></i> View project</a>-->
+            </div>
+        </div> 
+    </div>
+    <!-- Card -->
+</div>
